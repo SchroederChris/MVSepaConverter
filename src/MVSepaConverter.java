@@ -16,8 +16,8 @@ public class MVSepaConverter {
     private static final String CURRENCY = "EUR";
 
     // TODO SET TO CORRECT VALUES BEFORE GENERATING
-    private static final double AMOUNT = 18.00; // for CheckSum
-    private static final LocalDate COLLECTION_DATE = LocalDate.of(2014, 9, 30);
+    private static final double CONTROL_SUM = 2408; // for CheckSum
+    private static final LocalDate COLLECTION_DATE = LocalDate.of(2015, 4, 7);
 
     private static final String INPUT_PATH = "C:/temp/sepa.csv";
     private static final String CSV_SEPARATOR = ";";
@@ -58,7 +58,7 @@ public class MVSepaConverter {
         int numberOfRows = dataLines.size();
         String msgId = generateMessageId();
         String creDtTm = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"));
-        String ctrlSum = String.format(Locale.ENGLISH, "%.2f", AMOUNT * numberOfRows);
+        String ctrlSum = String.format(Locale.ENGLISH, "%.2f", CONTROL_SUM);
         String collectionDate = COLLECTION_DATE.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         fileWriter.append(String.format(XML_PREFIX, msgId, creDtTm, numberOfRows, ctrlSum, numberOfRows, ctrlSum, collectionDate));
     }
