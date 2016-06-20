@@ -14,14 +14,14 @@ public class MVSepaConverter {
     private static final String MV_BIC = "MERZDE55XXX";
     private static final String CdtrSchmeId = "DE55ZZZ00001382005";
     private static final String CURRENCY = "EUR";
+    private static final String CSV_SEPARATOR = ";";
 
     // TODO SET TO CORRECT VALUES BEFORE GENERATING
-    private static final double CONTROL_SUM = 2408; // for CheckSum
-    private static final LocalDate COLLECTION_DATE = LocalDate.of(2015, 4, 7);
-
-    private static final String INPUT_PATH = "C:/temp/sepa.csv";
-    private static final String CSV_SEPARATOR = ";";
-    private static final String OUTPUT_PATH = "C:/temp/sepa.xml";
+    private static final double CONTROL_SUM = 2429; // for CheckSum
+    private static final LocalDate COLLECTION_DATE = LocalDate.of(2016, 6, 23);
+    private static final String VERW_ZWECK = "Musikvereinigung 1851 Mettlach eV Mitgliedsbeitrag fuer 2016";
+    private static final String INPUT_PATH = "C:/temp/Mitgliedbeitrag2016.csv";
+    private static final String OUTPUT_PATH = "C:/temp/Mitgliedbeitrag2016.xml";
 
 
     public static void main(String[] args) throws IOException {
@@ -69,8 +69,7 @@ public class MVSepaConverter {
                         csvValues[columnNameToIndex.get("MANDATS_REF")],
                         LocalDate.parse(csvValues[columnNameToIndex.get("MANDATS_REF_DATUM")], DateTimeFormatter.ofPattern("dd.MM.yy")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd")),
                         csvValues[columnNameToIndex.get("NAME")],
-                        csvValues[columnNameToIndex.get("IBAN")],
-                        csvValues[columnNameToIndex.get("VERW_ZWECK")]))
+                        csvValues[columnNameToIndex.get("IBAN")]))
                 .forEach(xml -> {
                     try {
                         fileWriter.append(xml).append(System.lineSeparator());
@@ -168,7 +167,7 @@ public class MVSepaConverter {
             "\t\t\t\t\t</Id>\n" +
             "\t\t\t\t</DbtrAcct>\n" +
             "\t\t\t\t<RmtInf>\n" +
-            "\t\t\t\t\t<Ustrd>%s</Ustrd>\n" +
+            "\t\t\t\t\t<Ustrd>" + VERW_ZWECK + "</Ustrd>\n" +
             "\t\t\t\t</RmtInf>\n" +
             "\t\t\t</DrctDbtTxInf>";
 
