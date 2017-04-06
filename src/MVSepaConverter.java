@@ -5,6 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
@@ -17,11 +18,11 @@ public class MVSepaConverter {
     private static final String CSV_SEPARATOR = ";";
 
     // TODO SET TO CORRECT VALUES BEFORE GENERATING
-    private static final double CONTROL_SUM = 2429; // for CheckSum
-    private static final LocalDate COLLECTION_DATE = LocalDate.of(2016, 6, 23);
-    private static final String VERW_ZWECK = "Musikvereinigung 1851 Mettlach eV Mitgliedsbeitrag fuer 2016";
-    private static final String INPUT_PATH = "C:/temp/Mitgliedbeitrag2016.csv";
-    private static final String OUTPUT_PATH = "C:/temp/Mitgliedbeitrag2016.xml";
+    private static final double CONTROL_SUM = 2440; // for CheckSum
+    private static final LocalDate COLLECTION_DATE = LocalDate.of(2017, Month.APRIL, 13);
+    private static final String VERW_ZWECK = "Musikvereinigung 1851 Mettlach eV Mitgliedsbeitrag fuer 2017";
+    private static final String INPUT_PATH = "C:/temp/Mitgliedbeitrag2017.csv";
+    private static final String OUTPUT_PATH = "C:/temp/Mitgliedbeitrag2017.xml";
 
 
     public static void main(String[] args) throws IOException {
