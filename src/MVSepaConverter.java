@@ -15,7 +15,7 @@ public class MVSepaConverter {
     private static final String MV_BIC = "MERZDE55XXX";
     private static final String CdtrSchmeId = "DE55ZZZ00001382005";
     private static final String CURRENCY = "EUR";
-    private static final String CSV_SEPARATOR = ";";
+    private static final String CSV_SEPARATOR = ",";
 
     // TODO SET TO CORRECT VALUES BEFORE GENERATING
     private static final double CONTROL_SUM = 2440; // for CheckSum
