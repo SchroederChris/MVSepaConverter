@@ -18,11 +18,11 @@ public class MVSepaConverter {
     private static final String CSV_SEPARATOR = ",";
 
     // TODO SET TO CORRECT VALUES BEFORE GENERATING
-    private static final double CONTROL_SUM = 2440; // for CheckSum
-    private static final LocalDate COLLECTION_DATE = LocalDate.of(2017, Month.APRIL, 13);
-    private static final String VERW_ZWECK = "Musikvereinigung 1851 Mettlach eV Mitgliedsbeitrag fuer 2017";
-    private static final String INPUT_PATH = "C:/temp/Mitgliedbeitrag2017.csv";
-    private static final String OUTPUT_PATH = "C:/temp/Mitgliedbeitrag2017.xml";
+    private static final double CONTROL_SUM = 2202; // for CheckSum
+    private static final LocalDate COLLECTION_DATE = LocalDate.of(2020, Month.APRIL, 6);
+    private static final String VERW_ZWECK = "Musikvereinigung 1851 Mettlach eV Mitgliedsbeitrag fuer 2020";
+    private static final String INPUT_PATH = "Mitgliedbeitrag2020.csv";
+    private static final String OUTPUT_PATH = "Mitgliedbeitrag2020.xml";
 
 
     public static void main(String[] args) throws IOException {
